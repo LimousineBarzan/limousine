@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barzan Limousine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login Page -->
+        <div id="login-page" class="page">
+            <h2>Login</h2>
+            <input type="text" id="login-phone" placeholder="Phone Number">
+            <input type="password" id="login-password" placeholder="Password">
+            <button id="login-btn">Login</button>
+            <p>or <span id="signup-link" class="link">Create a new account</span></p>
+            <p>Admin? <span id="admin-link" class="link">Login here</span></p>
+        </div>
+
+        <!-- Signup Page -->
+        <div id="signup-page" class="page hidden">
+            <h2>Sign Up</h2>
+            <input type="text" id="signup-phone" placeholder="Phone Number">
+            <input type="password" id="signup-password" placeholder="Password">
+            <button id="signup-btn">Sign Up</button>
+            <p>Already have an account? <span id="login-link" class="link">Login</span></p>
+        </div>
+
+        <!-- Driver Dashboard -->
+        <div id="driver-dashboard" class="page hidden">
+            <h2>Welcome, <span id="driver-name"></span></h2>
+            <button id="logout-btn">Logout</button>
+
+            <h3>Personal Information</h3>
+            <form id="driver-form">
+                <input type="text" id="full-name" placeholder="Full Name">
+                <input type="text" id="national-id" placeholder="National ID">
+                <input type="text" id="vehicle-number" placeholder="Vehicle Number">
+                <input type="text" id="passport-number" placeholder="Passport Number">
+                <input type="text" id="residence-number" placeholder="Residence Number">
+                <button type="submit">Save Information</button>
+            </form>
+
+            <h3>Upload Documents</h3>
+            <input type="file" id="passport-file">
+            <input type="file" id="residence-file">
+            <input type="file" id="license-file">
+            <input type="file" id="car-file">
+            <button id="upload-btn">Upload Documents</button>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="admin-login-page" class="page hidden">
+            <h2>Admin Login</h2>
+            <input type="text" id="admin-user" placeholder="Username">
+            <input type="password" id="admin-pass" placeholder="Password">
+            <button id="admin-login-btn">Login as Admin</button>
+            <p>Back to <span id="back-to-login" class="link">User Login</span></p>
+        </div>
+
+        <div id="admin-dashboard" class="page hidden">
+            <h2>Admin Panel</h2>
+            <button id="admin-logout-btn">Logout</button>
+
+            <h3>Drivers List</h3>
+            <div id="drivers-list"></div>
+
+            <h3>Alerts</h3>
+            <div id="alerts-list"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

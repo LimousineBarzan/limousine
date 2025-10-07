@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة الإدارة - ليموزين برزان</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>🧑‍💼 لوحة الإدارة - ليموزين برزان</h1>
+    <button onclick="logout()">تسجيل الخروج</button>
+  </header>
+
+  <main class="container">
+    <h2>قائمة السائقين المسجلين</h2>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>الاسم الكامل</th>
+            <th>رقم الهاتف</th>
+            <th>الجنسية</th>
+            <th>رقم الإقامة</th>
+            <th>انتهاء الإقامة</th>
+            <th>رقم السيارة</th>
+          </tr>
+        </thead>
+        <tbody id="drivers-table">
+          <tr><td colspan="6" style="text-align:center;">جاري تحميل البيانات...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 ليموزين برزان</p>
+  </footer>
+
+  <script>
+    // التحقق من أن المستخدم مدير
+    document.addEventListener("DOMContentLoaded", () => {
+      const role = localStorage.getItem("role");
+      if (role !== "admin") {
+        alert("❌ لا يمكنك الوصول إلى هذه الصفحة");
+        window.location.href = "index.html";
+      }
+    });
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

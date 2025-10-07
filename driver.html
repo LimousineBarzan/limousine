@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ملف السائق - ليموزين برزان</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>🚖 ملف السائق</h1>
+    <button onclick="logout()">تسجيل الخروج</button>
+  </header>
+
+  <main class="container">
+    <div class="driver-card">
+      <h2>بيانات السائق</h2>
+      <p><strong>الاسم:</strong> <span id="driver-name">-</span></p>
+      <p><strong>رقم الهاتف:</strong> <span id="driver-phone">-</span></p>
+    </div>
+
+    <form id="driver-form" class="form-card">
+      <label>الجنسية:</label>
+      <input type="text" id="nationality" placeholder="مثلاً: سوداني">
+
+      <label>رقم الإقامة:</label>
+      <input type="text" id="residence_no" placeholder="رقم الإقامة">
+
+      <label>تاريخ انتهاء الإقامة:</label>
+      <input type="date" id="residence_exp">
+
+      <label>رقم السيارة:</label>
+      <input type="text" id="car_no" placeholder="رقم السيارة">
+
+      <button type="submit">💾 حفظ البيانات</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 ليموزين برزان</p>
+  </footer>
+
+  <script>
+    function logout() {
+      localStorage.clear();
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
